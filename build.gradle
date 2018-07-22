@@ -1,0 +1,23 @@
+apply plugin: 'java-library'
+apply plugin: 'maven'
+
+group = 'com.madgag'
+version = '1.5-SNAPSHOT'
+
+description = """Animated GIF library for Java"""
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+repositories {
+     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+	testImplementation 'junit:junit:4.12'
+	testImplementation 'org.easytesting:fest-assert-core:2.0M10'
+}
